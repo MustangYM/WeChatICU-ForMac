@@ -25,3 +25,5 @@ git clone https://github.com/MustangYM/WeChatICU-ForMac.git && cd WeChatICU-ForM
 <p align="center">
 <img src="https://github.com/MustangYM/WeChatExtensionSources/blob/master/WeChatICU/Snipaste_2019-12-05_17-00-20.png" width="800px"/>
 </p>
+
+## 祝你生活愉快
