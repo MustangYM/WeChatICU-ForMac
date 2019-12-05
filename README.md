@@ -9,7 +9,7 @@ WeChatWork企业微信消息防撤回, 聊天会话去水印
 
 ## 效果
 <p align="center">
-<img src="https://github.com/MustangYM/WeChatExtensionSources/blob/master/WeChatICU/Snipaste_2019-12-05_16-14-04.png" width="400px"/>
+<img src="https://github.com/MustangYM/WeChatExtensionSources/blob/master/WeChatICU/Snipaste_2019-12-05_16-14-04.png" width="600px"/>
 </p>
 
 ## 安装
