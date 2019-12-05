@@ -1,3 +1,7 @@
+<p align="center">
+<img src="https://github.com/MustangYM/WeChatExtensionSources/blob/master/WeChatICU/WeChatICU.png" width="1000px"/>
+</p>
+
 # WeChatICU-ForMac
 WeChatWork企业微信消息防撤回, 聊天会话去水印
 
