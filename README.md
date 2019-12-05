@@ -12,16 +12,16 @@ WeChatWork企业微信消息防撤回, 聊天会话去水印
 <img src="https://github.com/MustangYM/WeChatExtensionSources/blob/master/WeChatICU/Snipaste_2019-12-05_16-14-04.png" width="600px"/>
 </p>
 
-## 安装(命令有点长, 记得复制完哦)
+## 1.安装(命令有点长, 记得复制完哦)
 ```
 sudo rm -r -f WeChatICU-ForMac && git clone https://github.com/MustangYM/WeChatICU-ForMac.git && cd WeChatICU-ForMac/WeChatICU && ./install.sh
 ```
 
-## 卸载
+## 2.卸载
 ```
 git clone https://github.com/MustangYM/WeChatICU-ForMac.git && cd WeChatICU-ForMac/WeChatICU && ./uninstall.sh
 ```
-## 打开祖传终端工具(每台MAC自带的)
+## 3.打开祖传终端工具(每台MAC自带的)
 <p align="center">
 <img src="https://github.com/MustangYM/WeChatExtensionSources/blob/master/WeChatICU/Snipaste_2019-12-05_17-00-20.png" width="800px"/>
 </p>
