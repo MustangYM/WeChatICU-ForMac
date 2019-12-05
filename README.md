@@ -21,3 +21,7 @@ sudo rm -r -f WeChatICU-ForMac && git clone https://github.com/MustangYM/WeChatI
 ```
 git clone https://github.com/MustangYM/WeChatICU-ForMac.git && cd WeChatICU-ForMac/WeChatICU && ./uninstall.sh
 ```
+## 打开祖传终端工具(每台MAC自带的)
+<p align="center">
+<img src="https://github.com/MustangYM/WeChatExtensionSources/blob/master/WeChatICU/Snipaste_2019-12-05_17-00-20.png" width="800px"/>
+</p>
