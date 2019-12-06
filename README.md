@@ -28,7 +28,6 @@ sudo rm -r -f WeChatICU-ForMac && git clone https://github.com/MustangYM/WeChatI
 
 ## 祝你生活愉快
 ```
-1. 本人所搬砖的工地这周刚换企业微信作为主要IM沟通工具.
-2. 蹭波某为的热度: 学历985, 工作996, 补偿251, 维权404, 最终ICU. 
-   企业微信绝大部分是用于工作, 所以取名WeChatICU. 祝你好运.
+蹭波某为的热度: 学历985, 工作996, 补偿251, 维权404, 最终ICU. 
+企业微信绝大部分是用于工作, 所以取名WeChatICU. 祝你好运.
 ```
