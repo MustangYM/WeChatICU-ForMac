@@ -27,7 +27,3 @@ sudo rm -r -f WeChatICU-ForMac && git clone https://github.com/MustangYM/WeChatI
 </p>
 
 ## 祝你生活愉快
-```
-蹭波某为的热度: 学历985, 工作996, 补偿251, 维权404, 最终ICU. 
-企业微信绝大部分是用于工作, 所以取名WeChatICU. 祝你好运.
-```
