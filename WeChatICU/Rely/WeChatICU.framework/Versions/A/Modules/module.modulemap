@@ -1,6 +1,0 @@
-framework module WeChatICU {
-  umbrella header "WeChatICU.h"
-
-  export *
-  module * { export * }
-}

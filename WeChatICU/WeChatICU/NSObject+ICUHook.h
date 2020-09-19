@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSObject (Hook)
+@interface NSObject (Hook) <NSUserNotificationCenterDelegate>
 + (void)hook;
 @end
 

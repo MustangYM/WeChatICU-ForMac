@@ -15,6 +15,8 @@
 		184E37832398C2AD00E85BE8 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 184E37812398C2AD00E85BE8 /* fishhook.c */; };
 		184E37862398C2C900E85BE8 /* NSObject+ICUHook.h in Headers */ = {isa = PBXBuildFile; fileRef = 184E37842398C2C900E85BE8 /* NSObject+ICUHook.h */; };
 		184E37872398C2C900E85BE8 /* NSObject+ICUHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 184E37852398C2C900E85BE8 /* NSObject+ICUHook.m */; };
+		185096AD23E7CC2300AAA3BD /* ANYMethodLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 185096AB23E7CC2200AAA3BD /* ANYMethodLog.m */; };
+		185096AE23E7CC2300AAA3BD /* ANYMethodLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 185096AC23E7CC2200AAA3BD /* ANYMethodLog.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		184E37812398C2AD00E85BE8 /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
 		184E37842398C2C900E85BE8 /* NSObject+ICUHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+ICUHook.h"; sourceTree = "<group>"; };
 		184E37852398C2C900E85BE8 /* NSObject+ICUHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ICUHook.m"; sourceTree = "<group>"; };
+		185096AB23E7CC2200AAA3BD /* ANYMethodLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANYMethodLog.m; sourceTree = "<group>"; };
+		185096AC23E7CC2200AAA3BD /* ANYMethodLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANYMethodLog.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		184E37652398C13200E85BE8 /* WeChatICU */ = {
 			isa = PBXGroup;
 			children = (
+				185096AA23E7CC2200AAA3BD /* ANYMethodLog */,
 				184E37812398C2AD00E85BE8 /* fishhook.c */,
 				184E37802398C2AD00E85BE8 /* fishhook.h */,
 				184E37842398C2C900E85BE8 /* NSObject+ICUHook.h */,
@@ -101,6 +106,15 @@
 			path = WeChatICUTests;
 			sourceTree = "<group>";
 		};
+		185096AA23E7CC2200AAA3BD /* ANYMethodLog */ = {
+			isa = PBXGroup;
+			children = (
+				185096AB23E7CC2200AAA3BD /* ANYMethodLog.m */,
+				185096AC23E7CC2200AAA3BD /* ANYMethodLog.h */,
+			);
+			path = ANYMethodLog;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -111,6 +125,7 @@
 				184E37742398C13300E85BE8 /* WeChatICU.h in Headers */,
 				184E37862398C2C900E85BE8 /* NSObject+ICUHook.h in Headers */,
 				184E37822398C2AD00E85BE8 /* fishhook.h in Headers */,
+				185096AE23E7CC2300AAA3BD /* ANYMethodLog.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185096AD23E7CC2300AAA3BD /* ANYMethodLog.m in Sources */,
 				184E37832398C2AD00E85BE8 /* fishhook.c in Sources */,
 				184E37872398C2C900E85BE8 /* NSObject+ICUHook.m in Sources */,
 				184E377F2398C17600E85BE8 /* main.m in Sources */,

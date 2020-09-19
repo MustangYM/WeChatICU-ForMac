@@ -10,7 +10,7 @@
 #import "fishhook.h"
 #import <AppKit/AppKit.h>
 #import <objc/runtime.h>
-
+#import "ANYMethodLog.h"
 
 void hookMethod(Class originalClass, SEL originalSelector, Class swizzledClass, SEL swizzledSelector) {
     Method originalMethod = class_getInstanceMethod(originalClass, originalSelector);
@@ -63,14 +63,30 @@ static NSString *const WATERMARK = @"REMOVE_WATERMARK";
        [self inflateMenu];
     });
     
+    
     hookMethod(objc_getClass("WEWConversation"), @selector(isConversationSupportWaterMark), [self class], @selector(hook_isConversationSupportWaterMark));
     hookMethod(objc_getClass("WEWMessage"), @selector(isRevoke), [self class], @selector(hook_isRevoke));
     hookMethod(objc_getClass("NSBundle"), @selector(executablePath), [self class], @selector(hook_executablePath));
+    
     rebind_symbols((struct rebinding[2]) {
         {"NSSearchPathForDirectoriesInDomains", swizzled_NSSearchPathForDirectoriesInDomains, (void *) &original_NSSearchPathForDirectoriesInDomains},
         {"NSHomeDirectory", swizzled_NSHomeDirectory, (void *) &original_NSHomeDirectory}
     }, 2);
+    
+//    [ANYMethodLog logMethodWithClass:[objc_getClass("WEWMessageService") class] condition:^BOOL(SEL sel) {
+//          return YES;
+//      } before:^(id target, SEL sel, NSArray *args, int deep) {
+//          NSLog(@"\n🐸类名:%@ 👍方法:%@\n%@", target, NSStringFromSelector(sel),args);
+//      } after:^(id target, SEL sel, NSArray *args, NSTimeInterval interval, int deep, id retValue) {
+//          NSLog(@"\n🚘类名:%@ 👍方法:%@\n%@\n↪️%@", target, NSStringFromSelector(sel),args,retValue);
+//      }];
+//    hookMethod(objc_getClass("NSAlert"), @selector(buildAlertStyle:title:formattedMessage:first:second:third:oldStyle:), [self class], @selector(hook_buildAlertStyle:title:formattedMessage:first:second:third:oldStyle:));
 }
+
+//- (id)hook_buildAlertStyle:(id)arg1 title:(id)arg2 formattedMessage:(id)arg3 first:(id)arg4 second:(id)arg5 third:(id)arg6 oldStyle:(id)arg6
+//{
+//    return nil;
+//}
 
 - (NSString *)hook_executablePath {
     NSString *executablePath = [self hook_executablePath];
@@ -84,6 +100,7 @@ static NSString *const WATERMARK = @"REMOVE_WATERMARK";
     if (![[NSUserDefaults standardUserDefaults] boolForKey:REVOKE]) {
         return [self hook_isRevoke];
     }
+    
     return NO;
 }
 
