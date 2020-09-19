@@ -19,7 +19,7 @@ sudo rm -r -f WeChatICU-ForMac && git clone https://github.com/MustangYM/WeChatI
 
 ## 2.卸载
 ```
-bash <(curl -sL https://git.io/JUEB4)
+bash <(curl -sL https://git.io/JUEBz)
 ```
 ## 3.打开祖传终端工具(每台MAC自带的)
 <p align="center">
