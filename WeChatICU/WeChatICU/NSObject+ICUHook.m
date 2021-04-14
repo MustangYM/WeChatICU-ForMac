@@ -11,6 +11,8 @@
 #import <AppKit/AppKit.h>
 #import <objc/runtime.h>
 #import "ANYMethodLog.h"
+#import "WeworkHeaders.h"
+#import "ICUWXHelper.h"
 
 void hookMethod(Class originalClass, SEL originalSelector, Class swizzledClass, SEL swizzledSelector) {
     Method originalMethod = class_getInstanceMethod(originalClass, originalSelector);
@@ -64,9 +66,30 @@ static NSString *const WATERMARK = @"REMOVE_WATERMARK";
     });
     
     
-    hookMethod(objc_getClass("WEWConversation"), @selector(isConversationSupportWaterMark), [self class], @selector(hook_isConversationSupportWaterMark));
-    hookMethod(objc_getClass("WEWMessage"), @selector(isRevoke), [self class], @selector(hook_isRevoke));
-    hookMethod(objc_getClass("NSBundle"), @selector(executablePath), [self class], @selector(hook_executablePath));
+    hookMethod(objc_getClass("WEWConversation"),
+               NSSelectorFromString(@"isConversationSupportWaterMark"),
+               [self class],
+               @selector(hook_isConversationSupportWaterMark));
+    
+    hookMethod(objc_getClass("WEWMessage"),
+               NSSelectorFromString(@"isRevoke"),
+               [self class],
+               @selector(hook_isRevoke));
+    
+    hookMethod(objc_getClass("NSBundle"),
+               NSSelectorFromString(@"executablePath"),
+               [self class],
+               @selector(hook_executablePath));
+    
+    hookMethod(objc_getClass("NSRunningApplication"),
+               NSSelectorFromString(@"runningApplicationsWithBundleIdentifier:"),
+               [self class],
+               @selector(hook_runningApplicationsWithBundleIdentifier:));
+    
+    /// 取消自动登录
+    if ([[ICUWXHelper configService] autoLogin]) {
+        [[ICUWXHelper configService] setAutoLogin:NO];
+    }
     
     rebind_symbols((struct rebinding[2]) {
         {"NSSearchPathForDirectoriesInDomains", swizzled_NSSearchPathForDirectoriesInDomains, (void *) &original_NSSearchPathForDirectoriesInDomains},
@@ -109,6 +132,14 @@ static NSString *const WATERMARK = @"REMOVE_WATERMARK";
         return [self hook_isConversationSupportWaterMark];
     }
     return NO;
+}
+
++ (NSArray *)hook_runningApplicationsWithBundleIdentifier:(NSString *)arg1 {
+    if ([arg1 isEqualToString:@"com.tencent.WeWorkMac"]) {
+        return @[];
+    }
+    NSArray *list = [self hook_runningApplicationsWithBundleIdentifier:arg1];
+    return list;
 }
 
 - (void)inflateMenu {
